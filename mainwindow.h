@@ -25,6 +25,12 @@ private slots:
 
     void on_zoom_in_button_triggered();
 
+    void on_fit_button_triggered();
+
+    void on_zoom_out_button_triggered();
+
+    void on_fit_inv_button_triggered();
+
 private:
     Ui::MainWindow *ui;
     QGraphicsItem *item;

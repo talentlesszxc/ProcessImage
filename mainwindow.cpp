@@ -21,7 +21,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_open_image_button_triggered()
 {    
     QString image_file = QFileDialog::getOpenFileName(this,
-         tr("Open Image"), "D:/Nadenenko/CProjects/QtProjects/fdeep/fdeep/", tr("Image Files (*.png *.jpg *.bmp *.tiff *.tif)"));
+         tr("Open Image"), "D:/Nadenenko/CProjects/QtProjects/ProcessImage/ProcessImage/", tr("Image Files (*.png *.jpg *.bmp *.tiff *.tif)"));
         std::string image_path = image_file.toStdString();
         cv::Mat img_inp;
         img_inp = cv::imread(image_path);
@@ -40,10 +40,30 @@ void MainWindow::on_open_image_button_triggered()
             item = new QGraphicsPixmapItem(QPixmap::fromImage(QImage(img_inp.data, img_inp.cols, img_inp.rows,
                                                                      img_inp.step, QImage::Format_RGB888)));
             scene = new QGraphicsScene(this);
+            //scene->setSceneRect(500, 50, 50, 50);
             ui->graphicsView->setScene(scene);
             scene->addItem(item);
 
 
+
+}
+
+//при нажатии на зум+ выполняется функция zoom_in (описана в imageview.cpp, объявлена в заголовочном)
+void MainWindow::on_zoom_in_button_triggered()
+{    
+    ui->graphicsView->zoom_in();
+}
+
+//при нажатии на зум- выполняется функция zoom_out (описана в imageview.cpp, объявлена в заголовочном)
+void MainWindow::on_zoom_out_button_triggered()
+{
+    ui->graphicsView->zoom_out();
+}
+
+//при нажатии на кнопку фит выполняется функция viewFit (описана в imageview.cpp, объявлена в заголовочном)
+void MainWindow::on_fit_button_triggered()
+{
+    ui->graphicsView->viewFit();
 
 }
 
@@ -52,8 +72,7 @@ void MainWindow::on_exit_button_triggered()
     QApplication::quit();
 }
 
-void MainWindow::on_zoom_in_button_triggered()
+void MainWindow::on_fit_inv_button_triggered()
 {
-    double scaleFactor = 1.1;
-    ui->input_image_label->resize(scaleFactor * ui->input_image_label->pixmap()->size());
+    ui->graphicsView->rectFit();
 }

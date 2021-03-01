@@ -9,8 +9,13 @@ class imageview : public QGraphicsView
 {
 public:
     imageview(QWidget* parent = 0);
+    void viewFit();
+    void rectFit();
+    void zoom_in();
+    void zoom_out();
 protected:
     virtual void wheelEvent(QWheelEvent *event);
+    //virtual void mousePressEvent(QGraphicsSceneMouseEvent *event);
 };
 
 #endif // IMAGEVIEW_H

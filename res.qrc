@@ -5,5 +5,6 @@
         <file>icons/open-file.png</file>
         <file>icons/zoom_in.png</file>
         <file>icons/zoom_out.png</file>
+        <file>icons/fit_inv.png</file>
     </qresource>
 </RCC>

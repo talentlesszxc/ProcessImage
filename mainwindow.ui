@@ -50,6 +50,7 @@
     <addaction name="zoom_in_button"/>
     <addaction name="zoom_out_button"/>
     <addaction name="fit_button"/>
+    <addaction name="fit_inv_button"/>
    </widget>
    <addaction name="menu"/>
    <addaction name="menu_2"/>
@@ -69,6 +70,7 @@
    <addaction name="zoom_in_button"/>
    <addaction name="zoom_out_button"/>
    <addaction name="fit_button"/>
+   <addaction name="fit_inv_button"/>
    <addaction name="exit_button"/>
   </widget>
   <action name="open_image_button">
@@ -128,10 +130,22 @@
   <action name="fit_button">
    <property name="icon">
     <iconset resource="res.qrc">
+     <normaloff>:/pref/icons/fit_inv.png</normaloff>:/pref/icons/fit_inv.png</iconset>
+   </property>
+   <property name="text">
+    <string>Масштаб по размеру экрана</string>
+   </property>
+   <property name="toolTip">
+    <string>Масштаб по размеру экрана</string>
+   </property>
+  </action>
+  <action name="fit_inv_button">
+   <property name="icon">
+    <iconset resource="res.qrc">
      <normaloff>:/pref/icons/fit.png</normaloff>:/pref/icons/fit.png</iconset>
    </property>
    <property name="text">
-    <string>По размеру экрана</string>
+    <string>Фактический размер</string>
    </property>
   </action>
  </widget>
