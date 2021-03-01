@@ -16,9 +16,10 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    void mouseMoveEvent(QMouseEvent *event);
     ~MainWindow();
 
-private slots:
+private slots:    
     void on_open_image_button_triggered();
 
     void on_exit_button_triggered();

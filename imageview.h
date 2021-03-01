@@ -4,9 +4,11 @@
 #include <QGraphicsView>
 #include <QtWidgets>
 #include <QWidget>
-
+#include <QMouseEvent>
+#include <QStatusBar>
 class imageview : public QGraphicsView
 {
+
 public:
     imageview(QWidget* parent = 0);
     void viewFit();

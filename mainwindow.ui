@@ -15,13 +15,26 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="0">
+     <widget class="QLabel" name="input_image_label">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </item>
     <item row="0" column="0">
      <widget class="imageview" name="graphicsView"/>
     </item>
     <item row="1" column="0">
-     <widget class="QLabel" name="input_image_label">
+     <widget class="QLabel" name="label_coords">
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>X:0, Y:0</string>
       </property>
      </widget>
     </item>

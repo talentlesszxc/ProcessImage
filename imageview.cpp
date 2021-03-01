@@ -2,7 +2,9 @@
 
 imageview::imageview(QWidget *parent) : QGraphicsView(parent)
 {
+    setTransformationAnchor(AnchorUnderMouse);
 
+    setDragMode(QGraphicsView::ScrollHandDrag);
 }
 //мастшаб колесом мыши
 void imageview::wheelEvent(QWheelEvent *event)
@@ -52,3 +54,4 @@ void imageview::zoom_out()
     double scaleFactor = 1.15;
     scale(1/scaleFactor, 1/scaleFactor);
 }
+

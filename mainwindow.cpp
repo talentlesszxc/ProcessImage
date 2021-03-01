@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QFileDialog>
 #include <opencv2/opencv.hpp>
+#include <QMouseEvent>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -11,10 +12,15 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 }
 
+void MainWindow::mouseMoveEvent(QMouseEvent *event)
+{
+    ui->label_coords->setText("X:"+QString::number(event->x())+", Y:"+QString::number(event->y()));
+    ui->statusbar->showMessage("ready", 0);
+}
+
 MainWindow::~MainWindow()
 {
     delete ui;
-
 }
 
 //кнопка открыть изображение. Выбранное изображение помещается в лейбл input_image_label
@@ -67,12 +73,13 @@ void MainWindow::on_fit_button_triggered()
 
 }
 
-void MainWindow::on_exit_button_triggered()
-{
-    QApplication::quit();
-}
-
+//при нажатии на кнопку фит_inv выполняется функция rectFit (описана в imageview.cpp, объявлена в заголовочном)
 void MainWindow::on_fit_inv_button_triggered()
 {
     ui->graphicsView->rectFit();
+}
+
+void MainWindow::on_exit_button_triggered()
+{
+    QApplication::quit();
 }
